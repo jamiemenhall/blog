@@ -4,7 +4,7 @@ class PostsController < ApplicationController
  	end
 
  	def create
- 		puts "the params are #{params[:post].inspect}"
+ 		puts "the params are #{params[:post].inspect}".green
 
  		# a = params.require(:post).permit(:name, :content)
  		# puts "a is #{a.inspect}"
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
  		 	flash[:success] = "You have saved your post"
  		 	redirect_to new_post_path
  		 else
+ 		 	puts "save failed".red
  		 	render 'new'
  		 	#do some other stuff
  		 end
