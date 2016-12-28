@@ -1,1 +1,9 @@
-<%= @name %>
+<%= form_for @post do |f| %>
+	<div>
+	  <%= f.text_field :name, placeholder: "What's your name?" %>
+	</div>
+	<div>
+	  <%= f.text_area :content, placeholder: "What's your stuff?" %>
+	 </div>
+	  <%= f.submit "Create" %>
+<% end %>

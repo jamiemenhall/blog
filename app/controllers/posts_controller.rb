@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
 	def new
-		@name = "yolo"
+		@post = Post.new
  	end
 end
