@@ -1,3 +1,11 @@
+<% if @post.errors.any? %>
+	<div class="alert alert-danger">
+		<% @post.errors.each do |key, value| %>
+			<%= key %> <%= value %>
+		<% end %>
+	</div>
+<% end %>
+
 <%= form_for @post do |f| %>
 	<div>
 	  <%= f.text_field :name, placeholder: "What's your name?" %>

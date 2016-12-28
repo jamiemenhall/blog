@@ -8,9 +8,14 @@ class PostsController < ApplicationController
 
  		# a = params.require(:post).permit(:name, :content)
  		# puts "a is #{a.inspect}"
- 		 @post = Post.create(post_params)
- 		 flash[:success] = "You have saved your post"
- 		 redirect_to new_post_path
+ 		 @post = Post.new(post_params)
+ 		 if @post.save
+ 		 	flash[:success] = "You have saved your post"
+ 		 	redirect_to new_post_path
+ 		 else
+ 		 	render 'new'
+ 		 	#do some other stuff
+ 		 end
  	end
 
  	def post_params
