@@ -6,12 +6,12 @@
 	</div>
 <% end %>
 
-<%= form_for @post do |f| %>
+<%= simple_form_for @post do |f| %>
 	<div>
-	  <%= f.text_field :name, placeholder: "What's your name?" %>
+	  <%= f.input :name, placeholder: "What's your name?" %>
 	</div>
 	<div>
-	  <%= f.text_area :content, placeholder: "What's your stuff?" %>
+	  <%= f.input :content, placeholder: "What's your stuff?" %>
 	 </div>
 	  <%= f.submit "Create" %>
 <% end %>
