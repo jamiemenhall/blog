@@ -10,6 +10,7 @@ class PostsController < ApplicationController
  		# a = params.require(:post).permit(:name, :content)
  		# puts "a is #{a.inspect}"
  		 @post = Post.new(post_params)
+ 		 @post.user = current_user
  		 if @post.save
  		 	flash[:success] = "You have saved your post"
  		 	redirect_to new_post_path
