@@ -1,6 +1,12 @@
 
 <br>
-<%= link_to "Signup!", new_user_registration_path %>
-<br><br>
-<%= link_to "Make a new post!!", new_post_path %>
+
+<% if user_signed_in? %>
+	<%= link_to "Make a new post!!", new_post_path %>
+
+
+<% else %>
+	<%= link_to "Signup to make a new post!", new_user_registration_path %>
+
+<% end %>
 
