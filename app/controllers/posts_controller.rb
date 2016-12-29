@@ -21,6 +21,10 @@ class PostsController < ApplicationController
  		 end
  	end
 
+ 	def index
+ 		@posts = current_user.posts
+ 	end
+
  	def post_params
  		params.require(:post).permit(:name, :content)
  	end
